@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row d-flex justify-content-center m-5">
+    <div class="col-9 d-flex justify-content-center p-2">
+      <h2>Result</h2>
+    </div>
+    <div class="col-9 d-flex justify-content-between p-2 mt-5">
+      <% case @output %>
+        <% when "notIncluded" %>
+          <p>Sorry but <strong><%= @word_suggested %></strong> can't be build out of <%= @letter_set.join(", ") %></p>
+        <% when "noEnglish" %>
+          <p>Sorry but <strong><%= @word_suggested %></strong> is not an Englsih word</p>
+        <% when "✅" %>
+         <p>✅</p>
+        <% end %>
+    </div>
+    <div class="col-9 d-flex justify-content-between p-2 mt-5">
+      <%= link_to "Play again", new_path, class: "text-decoration-none" %>
+    </div>
+  </div>
+</div>
